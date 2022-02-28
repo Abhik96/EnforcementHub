@@ -312,5 +312,45 @@ function sliderButton1(){
           </span>
         </div>
       </footer>
+
+
+    
+    <div class="fixed bottom-0 right-0 flex flex-col items-end ml-6 w-full">
+        <div class="chat-modal show  mr-5 flex flex-col mb-5 shadow-lg sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <!-- close button -->
+          <div class="close-chat bg-red-500 hover:bg-red-600 text-white mb-1 w-10 flex justify-center items-center px-2 py-1 rounded self-end cursor-pointer">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+              <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+            </svg>
+          </div>
+          <iframe src='https://webchat.botframework.com/embed/chatbot76-bot?s=Eq7kq39aDDI.BDCBMXe8rcm7RG1G-cfFUl8OV5TCxiSkpLoi9HOO0lA'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
+        </div>
+      </div>
+    
+      <script>
+        const chatModal = document.querySelector('.chat-modal');
+        const chatServices = document.querySelector('.chat-services');
+    
+        const showChat = document.querySelector('.show-chat');
+        const closeChat = document.querySelector('.close-chat');
+        
+        showChat.addEventListener('click', function (){
+          chatModal.classList.add('show')
+          showChat.classList.add('hidden')
+          setTimeout(() => {
+            chatServices.classList.add('expand')
+          }, 500);
+        });
+        closeChat.addEventListener('click',function () {
+          setTimeout(() => {
+            showChat.classList.remove('hidden')
+          }, 820);
+          chatServices.classList.remove('expand')
+          setTimeout(() => {
+          chatModal.classList.remove('show')
+          }, 500);
+        });
+      </script>
 </body>
 </html>
